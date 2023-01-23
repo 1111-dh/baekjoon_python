@@ -8,7 +8,4 @@ for _ in range(t):
     n=0
     while b-a > n*(n+1):
         n+=1
-    if b-a <= n**2:
-        print(n*2-1)
-    else:
-        print(n*2)
+    print(n*2-1 if b-a <= n**2 else n*2)
