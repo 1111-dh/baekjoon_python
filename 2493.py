@@ -4,12 +4,16 @@ input=sys.stdin.readline
 n=int(input())
 arr=list(map(int,input().split()))
 stack=[]
+answer=[]
 for i in range(n):
-    for j in range(i-1,-1,-1):
-        if arr[j]>arr[i]:
-            stack.append(j+1)
-            break
+  while stack:
+    if stack[-1][-1] > arr[i]:
+      answer.append(stack[-1][0] + 1)
+      break
     else:
-        stack.append(0)
+      stack.pop()
+  if not stack:
+    answer.append(0)
+  stack.append((i, arr[i]))
 
-print(*stack)
+print(*answer)
