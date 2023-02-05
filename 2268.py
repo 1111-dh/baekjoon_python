@@ -26,7 +26,7 @@ def update(start, end, index, what, value):
 for _ in range(m):
     a,b,c=map(int,input().split())
     if a==1:
-        update(0,n-1,1,b-1,c)
+        update(0,n-1,1,b-1,c-arr[b-1])
         arr[b-1]=c
     else:
         if b>c: b,c=c,b
